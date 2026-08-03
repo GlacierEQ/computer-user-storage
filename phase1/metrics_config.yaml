@@ -1,0 +1,43 @@
+# PRIMORDYAL MESH TITAN - Metrics Configuration
+# Phase 1: Foundation
+
+metrics:
+  performance:
+    - name: \"request_latency\"
+      description: \"Request processing latency in milliseconds\"
+      unit: \"ms\"
+      buckets: [50, 100, 200, 500, 1000]
+    - name: \"token_usage\"
+      description: \"Token pool utilization percentage\"
+      unit: \"%\"
+      alert_threshold: 85
+    - name: \"mesh_throughput\"
+      description: \"Requests processed per second\"
+      unit: \"req/s\"
+      target: 1000
+  reliability:
+    - name: \"health_check_pass_rate\"
+      description: \"Percentage of successful health checks\"
+      unit: \"%\"
+      target: 99.99
+    - name: \"failover_time\"
+      description: \"Time to detect and failover on component failure\"
+      unit: \"ms\"
+      target: 5000
+    - name: \"evidence_integrity\"
+      description: \"Forensic vault integrity verification\"
+      unit: \"%\"
+      target: 100
+  security:
+    - name: \"unauthorized_access_attempts\"
+      description: \"Blocked unauthorized access attempts\"
+      unit: \"count\"
+      alert_threshold: 10
+    - name: \"encryption_coverage\"
+      description: \"Percentage of data encrypted\"
+      unit: \"%\"
+      target: 100
+ifloar-tracking:
+    - name: \"case_1fdv_evidence_items\"
+      description: \"Total evidence items in Case 1FDV-23-0001009\"
+      unit: \"count\"
