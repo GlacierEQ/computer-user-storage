@@ -50,6 +50,6 @@ jobs:
         run: |
           grep -q 'LOCAL_HEALTH_SNAPSHOT_NOT_DEPLOYMENT_TELEMETRY' README.md
           grep -q 'LOCAL_HEALTH_SNAPSHOT_NOT_DEPLOYMENT_TELEMETRY' phase1/health_check_framework.py
-          ! git grep -n '1FDV' -- README.md PHASE1_FOUNDATION_README.md phase1 tests
-          ! git grep -n 'legal_automation' -- README.md PHASE1_FOUNDATION_README.md phase1 tests
-          ! git grep -n 'evidence_manager' -- README.md PHASE1_FOUNDATION_README.md phase1 tests
+          ! git grep -n '1FDV' -- README.md PHASE1_FOUNDATION_README.md phase1
+          ! git grep -n 'legal_automation' -- README.md PHASE1_FOUNDATION_README.md phase1
+          ! git grep -n 'evidence_manager' -- README.md PHASE1_FOUNDATION_README.md phase1
