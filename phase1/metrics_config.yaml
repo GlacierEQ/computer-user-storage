@@ -1,43 +1,36 @@
-# PRIMORDYAL MESH TITAN - Metrics Configuration
-# Phase 1: Foundation
+# Computer User Storage — local metrics configuration
+# These are metric definitions and thresholds, not evidence that a backend is
+# deployed, collecting telemetry, or connected to private records.
 
 metrics:
   performance:
-    - name: \"request_latency\"
-      description: \"Request processing latency in milliseconds\"
-      unit: \"ms\"
+    - name: request_latency
+      description: Local request-processing latency in milliseconds
+      unit: ms
       buckets: [50, 100, 200, 500, 1000]
-    - name: \"token_usage\"
-      description: \"Token pool utilization percentage\"
-      unit: \"%\"
+    - name: token_usage
+      description: Modeled token-pool utilization percentage
+      unit: "%"
       alert_threshold: 85
-    - name: \"mesh_throughput\"
-      description: \"Requests processed per second\"
-      unit: \"req/s\"
+    - name: mesh_throughput
+      description: Modeled requests processed per second
+      unit: req/s
       target: 1000
   reliability:
-    - name: \"health_check_pass_rate\"
-      description: \"Percentage of successful health checks\"
-      unit: \"%\"
+    - name: health_check_pass_rate
+      description: Percentage of successful local health checks
+      unit: "%"
       target: 99.99
-    - name: \"failover_time\"
-      description: \"Time to detect and failover on component failure\"
-      unit: \"ms\"
+    - name: failover_time
+      description: Target time to detect a modeled component failure
+      unit: ms
       target: 5000
-    - name: \"evidence_integrity\"
-      description: \"Forensic vault integrity verification\"
-      unit: \"%\"
-      target: 100
   security:
-    - name: \"unauthorized_access_attempts\"
-      description: \"Blocked unauthorized access attempts\"
-      unit: \"count\"
+    - name: unauthorized_access_attempts
+      description: Counter definition for rejected authorization attempts
+      unit: count
       alert_threshold: 10
-    - name: \"encryption_coverage\"
-      description: \"Percentage of data encrypted\"
-      unit: \"%\"
+    - name: encryption_coverage
+      description: Target encrypted-data coverage for a future implementation
+      unit: "%"
       target: 100
-ifloar-tracking:
-    - name: \"case_1fdv_evidence_items\"
-      description: \"Total evidence items in Case 1FDV-23-0001009\"
-      unit: \"count\"

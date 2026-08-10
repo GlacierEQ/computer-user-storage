@@ -1,15 +1,12 @@
-# PHASE 1: FOUNDATION - Distributed Storage
+# Phase 1 Foundation ‚Äî Storage / Observability Experiment
 
-This repository holds all Phase 1 foundation artifacts for PRIMORDIAL ÄMESH@ÑÅ5 6 Core Components + Stealth-Team Monitoring
-- Structured Logger: JSON-Structured Event Logging
-- Metrics Configuration: 60+ KPI Definitions
-- No Code Modifications: 100% Preserved
+This directory preserves an early local observability experiment: a health-snapshot helper plus metrics definitions.
 
-### Integration
-Import and use these files in PRIMORDIAL MESH TITAN directly, or reference via GitHub raw URLs.
+## Current boundary
 
-### Computer-User Distributed Storage Architecture
-- **Phase Files**: Stored here, KEPT light locally (Pull as needed)
-- **System Configuration**: Track in this repo for current state
-- **Artifacts**: Accumulate here actoss all phases
-- **Deployment Logs**: Chain at repo root for tracking
+- The health framework accepts **caller-supplied local observations**; it does not discover or monitor a live mesh.
+- The metrics YAML defines names, units, thresholds, and targets; it does not prove telemetry collection or target attainment.
+- No private case, legal, evidence, personal, credential, or account data belongs in this public repository.
+- No live PRIMORDIAL MESH, stealth-team, storage backend, provider integration, or deployment is established by these files.
+
+Use the root [`README.md`](README.md) as the canonical public front door and `phase1/health_check_framework.py` as the current executable surface.
