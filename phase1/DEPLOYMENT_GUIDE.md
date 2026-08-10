@@ -1,59 +1,46 @@
-# PHASE 1: FOUNDATION DEPLOYMENT GUIDE
+# Phase 1 Local Verification Guide
 
-## Overview
-Monitoring, logging, and observability infrastructure for PRIMORDYAL MESH TITAN.
+## Scope
+
+This Phase 1 directory is a **repository-local observability experiment**, not a deployment receipt. It contains a caller-supplied health snapshot helper and a metrics-definition YAML file.
 
 ## Components
 
-### 1. Health Check Framework
-- Comprehensive mesh health monitoring
-- Monitors: 6 core components + 8 stealth-team automations
-- Coverage: Memory Constellation, Token Pool, Context Blanket, Resource Orchestrator, Forensic Vault
-- Usage: Import from phase1/health_check_framework.py
+### Health snapshot framework
 
-### 2. Structured Logger
-- JSON-structured event logging
-- Events logged: Core events, performance metrics, security alerts
-- No code modifications: Zero impact on existing system
-- Usage: Import from phase1/structured_logger.py
+`phase1/health_check_framework.py`
 
-### 3. Metrics Configuration (60+ KPIs)
-- Performance: latency (p50/p95/p99), throughput, utilization
-- Reliability: uptime (99.99%), failover time (<5s), integrity (100%)
-- Security: unauthorized access attempts, encryption coverage
-- Case tracking: evidence items, legal documents
+- validates explicit component observations;
+- aggregates status deterministically;
+- rejects invalid latency/utilization/timestamps;
+- performs no network discovery;
+- returns an explicit unavailable state from the historical `check_mesh_health()` API when no observation provider is configured.
 
-## Preserved Code Protection
+### Metrics definitions
 
-🔒 **NO CODE MODIFICATIONS** - Link from computer-user-storage only
-✅ All existing PRIMORDIAL code remains untouched
-✅ Phase 1 improvements are purely additive
-✅ Zero breaking changes
+`phase1/metrics_config.yaml`
 
-## Deployment Steps
+- defines generic metric names, units, thresholds, and targets;
+- does not establish collection, monitoring, deployment, uptime, performance, encryption coverage, or private-data integration.
 
-1. Copy phase1 directory into PRIMORDIAL-MESH-TITAN as enhancements/phase1
-2. Install dependencies: pip install pyyaml
-3. Test health framework: python enhancements/phase1/health_check_framework.py
-4. Verify stealth-team hooks are active
-5. Confirm all 60+ metrics collecting data
+## Local verification
 
-## Success Metrics (Phase 1)
+```bash
+python -m compileall -q phase1 tests
+python -m unittest discover -s tests -p 'test_*.py' -v
+```
 
-✅ All components report healthy status
-✅ Structured logs flowing to observability backend
-✅ 60+ metrics defined and collecting
-✅ Zero impact on existing code
-✅ Preserved originals remain untouched
+## Nonclaims
 
-## Next Phases
+These files do not establish:
 
-- Phase 2: Performance Optimization (caching, pooling)
-- Phase 3: Resilience (failover, circuit breakers)
-- Phase 4: Security (E2E encryption, RBAC)
-- Phase 5-8: Scalability, Developer Experience, Case Integration, MCP Ecosystem
+- a live distributed-storage backend;
+- PRIMORDIAL MESH deployment;
+- live stealth-team/core-component health;
+- production p50/p95/p99 latency or throughput;
+- failover performance;
+- legal/evidence/case tracking;
+- private-record access;
+- provider or sibling-repository integration.
 
----
-
-**Distributed Storage Location:** https://github.com/GlacierEQ/computer-user-storage
-**Last Updated:** 2026-08-03
+Historical deployment-oriented wording is preserved in Git provenance only. Current public promotion is limited to the verified local code and generic metric definitions.
